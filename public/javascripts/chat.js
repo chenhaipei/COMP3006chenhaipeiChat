@@ -87,7 +87,7 @@ $(document).ready(function () {
     $("#open").click(function () {
         currentUserNick = $.trim($("#nickInput").val());
         if ('' === currentUserNick) {
-            alert('Please enter your nickname first!');
+            alert('How can we call you?');
             return;
         }
         $("#prePage").hide();
@@ -118,7 +118,7 @@ $(document).ready(function () {
                         uid = connCounter;
                         onlineUserMap.put(uid, newUser);
                         updateOnlineUser();
-                        appendMessage(formatUserTalkString(newUser) + "[Enter the room]");
+                        appendMessage("[Hey!] " + formatUserTalkString(newUser) + " [Enter the room]");
                         break;
 
                     case EVENT_TYPE.LOGOUT:
@@ -127,7 +127,7 @@ $(document).ready(function () {
                         //alert(user.uid);
                         onlineUserMap.remove(user.uid);
                         updateOnlineUser();
-                        appendMessage(formatUserTalkString(user) + "[Left the room]");
+                        appendMessage("[Oops!] " + formatUserTalkString(user) + " [Left the room]");
                         break;
 
                     case EVENT_TYPE.SPEAK:
@@ -164,7 +164,7 @@ $(document).ready(function () {
                                 appendMessage(formatUserTalkHisString(data[i].user, data[i].time));
                                 appendMessage("<span>&nbsp;&nbsp;</span>" + data[i].content);
                             }
-                            appendMessage("<span class='gray'>==================The above is the most recent messages==================</span>");
+                            appendMessage("<span class='gray'>==================The above is the most recent messages==================</span><br/>");
                         }
                         break;
 
@@ -179,13 +179,13 @@ $(document).ready(function () {
                                 showMessage(formatUserTalkHisString(alldata[i].user, alldata[i].time));
                                 showMessage("<span>&nbsp;&nbsp;</span>" + alldata[i].content);
                             }
-                            showMessage("<span class='gray'>==================The above is all chat messages==================</span>");
+                            showMessage("<br/><span class='gray'>==================The above is all history chat messages==================</span><br/>");
                         }
                         break;
 
                     case EVENT_TYPE.ERROR:
                         // Something went wrong
-                        appendMessage("[The system is busy...]");
+                        appendMessage("[Something went wrong, please try again later...]");
                         break;
 
                     default:
@@ -196,7 +196,7 @@ $(document).ready(function () {
         };
 
         socket.onerror = function () {
-            appendMessage("[There is something wrong with the network, please try again later...]");
+            appendMessage("[There is something wrong with the network...]");
         };
 
         socket.onclose = function () {
@@ -263,6 +263,7 @@ $(document).ready(function () {
             'EVENT': EVENT_TYPE.ALL_HISTORY
         }));
     }
+
     //History hides when clicking on a blank or other area
     $(document).click(function () {
         $("#historyFrame").slideUp('slow');
