@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Haipei Node Chat</title>
+    <meta charset="utf-8"/>
+    <script src="./javascripts/jquery.js"></script>
+    <script src="./javascripts/zTool.js"></script>
+    <script src="./javascripts/chatLib.js"></script>
+    <script src="./javascripts/DateUtil.js"></script>
+    <script src="./javascripts/chat.js"></script>
+    <link rel="stylesheet" href="./stylesheets/main.css">
+
+</head>
+<body>
+<!--//When the page is loaded, the client program first verifies that the browser supports Web Socket.-->
+<!--// If not, the page shows the error Page-->
+<div id='errorPage' class='page' style='display:none;'>
+    <h1>
+        WebSocket is not supported by this browser, please use chrome or Microsoft Edge or opera or firefox
+    </h1>
+</div>
+<div id='prePage' class='page' style='width:690px;text-align:center;'>
+    <label for='nickInput'></label>
+    <input id='nickInput' style='width: 200px;' type='text' placeholder="Please enter your nickname"/>&nbsp;
+    <input id='open' type='button' value='Enter the chat room'/>
+</div>
+<div id='mainPage' class='page' style='display:none;'>
+    <div style='overflow:hidden;'>
+        <div class='talkLeft'>
+            <div id='talkFrame'></div>
+            <div id='inputDiv'>
+                <label for="message"></label>
+                <textarea placeholder="Hey, just say something" id="message"></textarea>
+            </div>
+            <div style='overflow:hidden;'>
+                <input type='button' style="float: left;" value='View history' id="history"/>
+                <input type='button' style="float: right;" value='Send' id="send"/>
+            </div>
+        </div>
+        <div class='talkRight'>
+            <div id='onlineUsers'></div>
+        </div>
+        <div id="historyFrame">
+        </div>
+    </div>
+</div>
+</body>
+</html>
