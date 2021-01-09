@@ -5,7 +5,7 @@ body {
     overflow: auto;
     margin: 0;
     padding: 0;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 body, input, select, button, textarea {
@@ -83,7 +83,7 @@ select, input, button, button img, textarea, label, img {
     overflow: hidden;
     width: 890px;
     background: #FFFFFF;
-    font-size: 12px;
+    font-size: 16px;
     padding: 10px 10px;
     margin: 50px auto 0;
 }
@@ -105,7 +105,7 @@ select, input, button, button img, textarea, label, img {
     width: 100px;
     height: 30px;
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 input[type="button"] {
