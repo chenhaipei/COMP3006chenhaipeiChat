@@ -2,7 +2,7 @@
 // Six event types are defined
 // The server port is defined.
 // The analyze Message Data method is defined
-// Used to convert received jason data into JavaScript objects
+// Used to convert received json data into JavaScript objects
 
 
 (function (exports) {

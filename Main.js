@@ -1,4 +1,4 @@
-function  wss() {
+function wss() {
 //Creating a Web Socket server becomes easy because Web Socket API and the API of the node-web socket-server framework have helped us encapsulate it, just call it directly
 //     The main thing is to create a Web Socket server and initialize some variables,
 //     Set the server-side handling for various events.
@@ -195,16 +195,23 @@ function  wss() {
             //console.log(conn.uid);
             let logoutUser = onlineUserMap.remove(conn.uid);
             //save in db
-            //let user = new logoutUserModel({uid: logoutUser.uid, nickName: logoutUser.nick, logoutDate: Date.now()})
+            // let user = new logoutUserModel({
+            //     uid: logoutUser.uid,
+            //     nickName: logoutUser.nick,
+            //     logoutDate: Date.now()
+            // })
             loginUserModel.findById(conn.oId, function (err, loginuser) {
-                //console.log(loginuser);
+                console.log(loginuser);
                 if (err) {
                     console.log(err)
                 } else {
                     if (loginuser) {
-                        loginUserModel.updateOne(loginuser, {logoutDate: Date.now()}, function (err, model) {
-                            if (err) console.log(err);
-                        })
+                        loginUserModel.updateOne(loginuser, {
+                                logoutDate: Date.now()
+                            },
+                            function (err, model) {
+                                if (err) console.log(err);
+                            })
                     }
                 }
             });
@@ -247,4 +254,5 @@ function  wss() {
     console.log('Start listening on port ' + PORT);
 
 }
-module.exports=wss;
+
+module.exports = wss;

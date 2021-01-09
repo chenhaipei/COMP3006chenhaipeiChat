@@ -87,7 +87,7 @@ $(document).ready(function () {
     $("#open").click(function () {
         currentUserNick = $.trim($("#nickInput").val());
         if ('' === currentUserNick) {
-            alert('How can we call you?');
+            alert('How may we call you?');
             return;
         }
         $("#prePage").hide();
