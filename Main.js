@@ -118,7 +118,7 @@ function wss() {
                             }))
                         });
                         historyContent.add({
-                            'user': onlineUserMap.get(uid),
+                            'user': onlineUserMap.get(conn.uid),
                             'content': content,
                             'time': new Date().getTime()
                         });

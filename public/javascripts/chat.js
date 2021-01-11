@@ -164,7 +164,7 @@ $(document).ready(function () {
                                 appendMessage(formatUserTalkHisString(data[i].user, data[i].time));
                                 appendMessage("<span>&nbsp;&nbsp;</span>" + data[i].content);
                             }
-                            appendMessage("<span class='gray'>==================The above is the most recent messages==================</span><br/>");
+                            appendMessage("<span class='gray'>=====The above is the most recent messages=====</span><br/>");
                         }
                         break;
 
